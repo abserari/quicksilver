@@ -13,7 +13,7 @@ type ruler interface {
 
 type myruler struct{}
 
-// print !ok
+// // print !ok
 // func (*myruler) distance(p *point) ([]int, error) {
 // 	v := make([]int, 1)
 // 	v = append(v, p.x+p.y)
@@ -30,10 +30,14 @@ func (*myruler) distance(p *point, origin ...point) ([]int, error) {
 func main() {
 	var valid interface{}
 	valid = new(myruler)
-	if _, ok := valid.(ruler); ok {
+	_, ok := valid.(ruler)
+	if ok {
 		log.Println("ok")
 	} else {
 		log.Println("not")
 	}
 
+	p := &point{x: 1, y: 3}
+
+	valid.(ruler).distance(p)
 }
