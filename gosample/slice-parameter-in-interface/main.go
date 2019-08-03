@@ -13,11 +13,14 @@ type ruler interface {
 
 type myruler struct{}
 
+// print !ok
 // func (*myruler) distance(p *point) ([]int, error) {
 // 	v := make([]int, 1)
 // 	v = append(v, p.x+p.y)
 // 	return v, nil
 // }
+
+// print : ok
 func (*myruler) distance(p *point, origin ...point) ([]int, error) {
 	v := make([]int, 1)
 	v = append(v, p.x+p.y)
