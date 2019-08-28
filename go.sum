@@ -1,0 +1,10 @@
+github.com/fatih/structs v1.1.0 h1:Q7juDM0QtcnhCpeyLGQKyg4TOIghuNXrkL32pHAUMxo=
+github.com/fatih/structs v1.1.0/go.mod h1:9NiDSp5zOcgEDl+j00MP/WkGVPOlPRLejGD8Ga6PJ7M=
+github.com/mitchellh/mapstructure v1.1.2 h1:fmNYVwqnSfB9mZU6OS2O6GsXM+wcskZDuKQzvN1EDeE=
+github.com/mitchellh/mapstructure v1.1.2/go.mod h1:FVVH3fgwuzCH5S8UJGiWEs2h04kUh9fWfEaFds41c1Y=
+gopkg.in/GetStream/stream-go2.v1 v1.14.0 h1:+B83txS/vFxnh4BgFWJDr6I6L130mqEUJ+IAOp2+viE=
+gopkg.in/GetStream/stream-go2.v1 v1.14.0/go.mod h1:X+MeBOdypbStw1Nh2YZfHCb1SyJjc4N3VdXz1+onCCc=
+gopkg.in/LeisureLink/httpsig.v1 v1.2.0 h1:djikGtPsTMdQgoX3ycO4MoDq1olpR/g8SOg7pQ4mLfs=
+gopkg.in/LeisureLink/httpsig.v1 v1.2.0/go.mod h1:hITO4WLS7NRJLVS5zpBogEZJHH01iZ1ng61LSp/xOyQ=
+gopkg.in/dgrijalva/jwt-go.v3 v3.2.0 h1:N46iQqOtHry7Hxzb9PGrP68oovQmj7EhudNoKHvbOvI=
+gopkg.in/dgrijalva/jwt-go.v3 v3.2.0/go.mod h1:hdNXC2Z9yC029rvsQ/on2ZNQ44Z2XToVhpXXbR+J05A=
