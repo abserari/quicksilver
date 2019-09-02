@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"bytes"
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -22,5 +23,15 @@ func scanandreadandjoin() {
 }
 
 func main() {
-	scanandreadandjoin()
+	var buf bytes.Buffer
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Split(bufio.ScanWords)
+	for scanner.Scan() {
+		fmt.Println(scanner.Bytes())
+		buf.Write(scanner.Bytes())
+	}
+
+	output := buf.Bytes()
+	fmt.Println(output, output[0])
+	// scanandreadandjoin()
 }
