@@ -7,7 +7,7 @@ require (
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/gorilla/sessions v1.2.0 // indirect
 	github.com/gosimple/slug v1.7.0 // indirect
-	github.com/jinzhu/gorm v1.9.10 // indirect
+	github.com/jinzhu/gorm v1.9.10
 	github.com/mattn/go-sqlite3 v1.11.0 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.2 // indirect
 	github.com/mitchellh/mapstructure v1.1.2 // indirect
