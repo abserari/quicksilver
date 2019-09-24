@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-type Anyg struct {}
+type Anyg struct{}
 
 func (a *Anyg) Any() {
 	fmt.Println("Any:any")
@@ -33,7 +33,7 @@ type Collection struct {
 	Anyg
 }
 
-func (c *Collection) Any(){
+func (c *Collection) Any() {
 	fmt.Println("collection:any")
 }
 
@@ -43,8 +43,8 @@ func (c *Collection) Some() {
 
 // Documents some line to test.
 // Then know how can use embed struct.
-func TestStruct(){
-	c  := &Collection{
+func TestStruct() {
+	c := &Collection{
 		Someg{},
 		All{},
 		Anyg{},
@@ -65,34 +65,33 @@ type Ready interface {
 
 // There is a struct implements Ready
 type AlwaysReady struct{}
-func (a *AlwaysReady)Any() {}
-func (a *AlwaysReady)Some() {}
-func (a *AlwaysReady) Readiness()bool {
+
+func (a *AlwaysReady) Any()  {}
+func (a *AlwaysReady) Some() {}
+func (a *AlwaysReady) Readiness() bool {
 	return true
 }
 
 // We use All struct to implements our own methods logic.
 // and use AlwaysReady to implement Ready interface.
-type RealWorldUse struct{
+type RealWorldUse struct {
 	p All
 	AlwaysReady
 }
 
-
-func EmbedInRealWorld(embedReady Ready){
+func EmbedInRealWorld(embedReady Ready) {
 	fmt.Println(embedReady.Readiness())
 }
 
 func main() {
 
-	TestStruct() 
-
+	TestStruct()
 
 	// ----------------------------------------------------------------
 	embed := &RealWorldUse{
 		All{},
 		AlwaysReady{},
 	}
- 
+
 	EmbedInRealWorld(embed)
 }
