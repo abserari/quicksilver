@@ -26,4 +26,5 @@ require (
 	gopkg.in/GetStream/stream-go2.v1 v1.14.0
 	gopkg.in/LeisureLink/httpsig.v1 v1.2.0 // indirect
 	gopkg.in/dgrijalva/jwt-go.v3 v3.2.0 // indirect
+	gopkg.in/transloadit/go-sdk.v1 v1.1.1
 )
