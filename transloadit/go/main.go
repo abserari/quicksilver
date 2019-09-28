@@ -1,6 +1,9 @@
 package main
 
 import (
+	"context"
+	"fmt"
+
 	transloadit "gopkg.in/transloadit/go-sdk.v1"
 )
 
@@ -14,4 +17,24 @@ func main() {
 
 	assembly := transloadit.NewAssembly()
 
+	assembly.AddFile("image", "/Users/abser/Pictures/收集图/丛林狗武士.jpg")
+	assembly.AddStep("resize", map[string]interface{}{
+		"robot":           "/image/resize",
+		"width":           75,
+		"height":          75,
+		"resize_strategy": "pad",
+		"background":      "#000000",
+	})
+
+	info, err := client.StartAssembly(context.Background(), assembly)
+	if err != nil {
+		panic(err)
+	}
+
+	info, err = client.WaitForAssembly(context.Background(), info)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("You can view the result at %s\n", info.Results["resize"][0].SSLURL)
 }

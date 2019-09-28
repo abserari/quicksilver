@@ -21,6 +21,7 @@ func main() {
 	}
 }
 
+// UploadFile -
 func UploadFile(response http.ResponseWriter, request *http.Request) {
 	fmt.Println("method:", request.Method)
 	if request.Method == "GET" {

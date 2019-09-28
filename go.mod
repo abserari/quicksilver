@@ -3,6 +3,7 @@ module github.com/yhyddr/quicksilver
 go 1.12
 
 require (
+	github.com/TrueFurby/go-callvis v0.5.0 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/gorilla/sessions v1.2.0 // indirect
@@ -23,6 +24,7 @@ require (
 	github.com/qor/validations v0.0.0-20171228122639-f364bca61b46 // indirect
 	github.com/rainycape/unidecode v0.0.0-20150907023854-cb7f23ec59be // indirect
 	github.com/theplant/cldr v0.0.0-20190423050709-9f76f7ce4ee8 // indirect
+	golang.org/x/tools v0.0.0-20190927191325-030b2cf1153e // indirect
 	gopkg.in/GetStream/stream-go2.v1 v1.14.0
 	gopkg.in/LeisureLink/httpsig.v1 v1.2.0 // indirect
 	gopkg.in/dgrijalva/jwt-go.v3 v3.2.0 // indirect
