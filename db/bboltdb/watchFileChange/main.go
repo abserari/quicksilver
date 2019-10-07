@@ -9,6 +9,8 @@ import (
 	bolt "go.etcd.io/bbolt"
 )
 
+var insertNum uint64 = 200000
+
 func main() {
 	hang := make(chan bool)
 	db, err := bolt.Open("./data.db", 0600, nil)
@@ -32,7 +34,7 @@ func main() {
 
 				b.Put(byteid, byteid)
 
-				if num == 14100 {
+				if num == insertNum {
 					log.Println(time.Now().Sub(times))
 					os.Exit(0)
 				}
