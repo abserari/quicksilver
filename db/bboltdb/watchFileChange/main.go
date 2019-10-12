@@ -9,7 +9,7 @@ import (
 	bolt "go.etcd.io/bbolt"
 )
 
-var insertNum uint64 = 200000
+var insertNum uint64 = 100
 
 func main() {
 	hang := make(chan bool)
