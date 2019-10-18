@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  mongo-rs-n1:
+    container_name: mongo-rs-n1
+    image: mongo:4.2.0-bionic
+    hostname: mongo-rs-n1
+    networks:
+        - mongo-replica-net
+    volumes:
+      - ./mongo-rs-n1/data:/data/db
+      - ./mongo-rs-n1/config:/data/configdb
+    ports:
+      - "127.0.0.1:40001:27017"
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "devrs" ]
+    restart: always
+  mongo-rs-n2:
+    container_name: mongo-rs-n2
+    image: mongo:4.2.0-bionic
+    hostname: mongo-rs-n2
+    depends_on:
+        - mongo-rs-n1
+    networks:
+        - mongo-replica-net
+    volumes:
+      - ./mongo-rs-n2/data:/data/db
+      - ./mongo-rs-n2/config:/data/configdb
+    ports:
+      - "127.0.0.1:40002:27017"
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "devrs" ]
+    restart: always
+  mongo-rs-n3:
+    container_name: mongo-rs-n3
+    image: mongo:4.2.0-bionic
+    hostname: mongo-rs-n3
+    depends_on:
+        - mongo-rs-n1
+        - mongo-rs-n2
+    networks:
+        - mongo-replica-net
+    volumes:
+      - ./mongo-rs-n3/data:/data/db
+      - ./mongo-rs-n3/config:/data/configdb
+    ports:
+      - "127.0.0.1:40003:27017"
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "devrs" ]
+    restart: always
+networks:
+  mongo-replica-net:
+    driver: bridge
