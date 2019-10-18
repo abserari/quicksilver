@@ -2,16 +2,23 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"time"
 
-	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+type article struct {
+	Title    string `bson:"title,omitempty"`
+	Abstract string `bson:"abstract"`
+	ReadCnt  int64  `bson:"reads,omitempty"`
+}
+
 func main() {
-	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://127.0.0.1:40001, 127.0.0.1:40002, 127.0.0.1:40003"))
+	client, err := mongo.NewClient(options.Client().ApplyURI("mongodb://mongo-rs-n1:27017, mongo-rs-n2:27017, mongo-rs-n3:27017"))
+
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -25,12 +32,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-	collection := client.Database("admin").Collection("system.version")
+	collection := client.Database("simple").Collection("article")
 
-	cnt, err := collection.CountDocuments(context.Background(), bson.M{})
-	if err != nil {
-		log.Fatal(err)
+	for i := 0; i < 200; i++ {
+		art := article{
+			Title:    fmt.Sprintf("T-%d", i),
+			Abstract: fmt.Sprintf("Abstract %d", i),
+			ReadCnt:  int64(i + 20),
+		}
+
+		if _, err := collection.InsertOne(context.Background(), &art); err != nil {
+			log.Fatal(err)
+		}
 	}
-
-	log.Println("admin.system.version.count = ", cnt)
 }
