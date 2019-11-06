@@ -1,0 +1,3 @@
+[submodule "dapr/samples"]
+	path = dapr/samples
+	url = https://github.com/dapr/samples.git
