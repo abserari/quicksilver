@@ -1,3 +1,6 @@
 [submodule "dapr/samples"]
 	path = dapr/samples
 	url = https://github.com/dapr/samples.git
+[submodule "dapr/js-sdk"]
+	path = dapr/js-sdk
+	url = https://github.com/dapr/js-sdk.git
