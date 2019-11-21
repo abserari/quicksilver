@@ -1,40 +1,38 @@
 package main
 
 import (
-    "fmt"
-    "reflect"
+	"fmt"
+	"reflect"
 )
 
 func Decorate(impl interface{}) interface{} {
-                fn := reflect.ValueOf(impl)
+	fn := reflect.ValueOf(impl)
 
-        inner := func(in []reflect.Value) []reflect.Value {
-            f := reflect.ValueOf(impl)
+	inner := func(in []reflect.Value) []reflect.Value {
+		f := reflect.ValueOf(impl)
 
-            fmt.Println("Stuff before")
-            // ...
+		fmt.Println("Stuff before")
+		// ...
 
-            ret := f.Call(in)
+		ret := f.Call(in)
 
-            fmt.Println("Stuff after")
-            // ...
+		fmt.Println("Stuff after")
+		// ...
 
-            return ret
-        }
+		return ret
+	}
 
-                v := reflect.MakeFunc(fn.Type(), inner)
+	v := reflect.MakeFunc(fn.Type(), inner)
 
-        return v.Interface()
+	return v.Interface()
 }
 
 var Add = Decorate(
-    func (a, b int) int {
-        return a + b
-    },
+	func(a, b int) int {
+		return a + b
+	},
 ).(func(a, b int) int)
 
-
-
 func main() {
-    fmt.Println(Add(1, 2))
+	fmt.Println(Add(1, 2))
 }
