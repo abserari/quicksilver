@@ -20,11 +20,11 @@ func main() {
 
 	loop := s2.LoopFromPoints(points)
 
-	defaultCoverer := s2.RegionCoverer{MaxLevel: 20, MaxCells: 1000, MinLevel: 1}
+	defaultCoverer := s2.RegionCoverer{MaxLevel: 20, MaxCells: 8, MinLevel: 1}
 
 	cvr := defaultCoverer.Covering(loop)
 
 	for _, c3 := range cvr {
-		fmt.Printf("%x,\n", c3)
+		fmt.Printf("%x,\n", uint64(c3))
 	}
 }
