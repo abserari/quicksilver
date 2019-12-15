@@ -13,11 +13,8 @@ echo "download yaml files ..."
 cd $KNATIVE_PATH
 
 wget -q https://github.com/knative/serving/releases/download/${KNATIVE_VER}/serving.yaml 
-wget -q https://github.com/knative/build/releases/download/${KNATIVE_VER}/build.yaml 
 wget -q https://github.com/knative/eventing/releases/download/${KNATIVE_VER}/release.yaml 
-wget -q https://github.com/knative/eventing-sources/releases/download/${KNATIVE_VER}/eventing-sources.yaml 
 wget -q https://github.com/knative/serving/releases/download/${KNATIVE_VER}/monitoring.yaml 
-wget -q https://raw.githubusercontent.com/knative/serving/${KNATIVE_VER}/third_party/config/build/clusterrole.yaml
 
 cd ..
 
