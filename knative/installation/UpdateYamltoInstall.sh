@@ -40,7 +40,7 @@ do
 		else
 			sub_line1=${line#image:}
 			sub_line2=${sub_line1#*/}
-			sub_line3=${sub_line2%%@sha*}
+			sub_line3=${sub_line2%%:*}
 			container_name=knative_${sub_line3//\//_}
 
 			echo ${line#image:} ${REGISTRY_URL}/${container_name}:${KNATIVE_VER} >> image.tmp;
@@ -62,7 +62,7 @@ do
 		else 
 			sub_line1=${line#value:}
 			sub_line2=${sub_line1#*/}
-			sub_line3=${sub_line2%%@sha*}
+			sub_line3=${sub_line2%%:*}
 			container_name=knative_${sub_line3//\//_}
 
 			echo ${line#value:} ${REGISTRY_URL}/${container_name}:${KNATIVE_VER} >> image.tmp;

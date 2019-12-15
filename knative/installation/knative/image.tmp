@@ -1,5 +1,5 @@
-k8s.gcr.io/elasticsearch:v5.6.4 yhyddr/knative_elasticsearch:v5.6.4:v0.11.0
-k8s.gcr.io/fluentd-elasticsearch:v2.0.4 yhyddr/knative_fluentd-elasticsearch:v2.0.4:v0.11.0
+k8s.gcr.io/elasticsearch:v5.6.4 yhyddr/knative_elasticsearch:v0.11.0
+k8s.gcr.io/fluentd-elasticsearch:v2.0.4 yhyddr/knative_fluentd-elasticsearch:v0.11.0
 gcr.io/knative-releases/knative.dev/eventing/cmd/controller@sha256:d071a79973911f45ffd9021ad7e7cc6f4e262b3f1edb77d9bfdcf91b0d657b4e yhyddr/knative_gcr.io_knative-releases_knative.dev_eventing_cmd_controller:v0.11.0
 gcr.io/knative-releases/knative.dev/eventing/cmd/sources_controller@sha256:0df4cfcf82998eccf687a08a456f60578190e68175a441bcd3c26de7a4869739 yhyddr/knative_gcr.io_knative-releases_knative.dev_eventing_cmd_sources_controller:v0.11.0
 gcr.io/knative-releases/knative.dev/eventing/cmd/webhook@sha256:75b2dfaaf279b98c2e90b02414b2255aebbc58b23beeba838feba57b09da12b6 yhyddr/knative_gcr.io_knative-releases_knative.dev_eventing_cmd_webhook:v0.11.0

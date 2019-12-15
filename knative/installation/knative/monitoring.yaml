@@ -96,7 +96,7 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: yhyddr/knative_elasticsearch:v5.6.4:v0.11.0
+        image: yhyddr/knative_elasticsearch:v0.11.0
         name: elasticsearch-logging
         ports:
         - containerPort: 9200
@@ -386,7 +386,7 @@ spec:
       - env:
         - name: FLUENTD_ARGS
           value: --no-supervisor -q
-        image: yhyddr/knative_fluentd-elasticsearch:v2.0.4:v0.11.0
+        image: yhyddr/knative_fluentd-elasticsearch:v0.11.0
         name: fluentd-ds
         resources:
           limits:
