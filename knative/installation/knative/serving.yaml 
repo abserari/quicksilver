@@ -863,7 +863,7 @@ metadata:
   name: queue-proxy
   namespace: knative-serving
 spec:
-  image: yhyddr/knative_gcr.io_knative-releases_knative.dev_serving_cmd_queue:v0.11.0
+  image: yhyddr/knative_serving_cmd_queue:v0.11.0
 
 ---
 apiVersion: apps/v1
@@ -908,7 +908,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: knative.dev/internal/serving
-        image: yhyddr/knative_gcr.io_knative-releases_knative.dev_serving_cmd_activator:v0.11.0
+        image: yhyddr/knative_serving_cmd_activator:v0.11.0
         livenessProbe:
           httpGet:
             httpHeaders:
@@ -999,7 +999,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: knative.dev/serving
-        image: yhyddr/knative_gcr.io_knative-releases_knative.dev_serving_cmd_autoscaler-hpa:v0.11.0
+        image: yhyddr/knative_serving_cmd_autoscaler-hpa:v0.11.0
         name: autoscaler-hpa
         ports:
         - containerPort: 9090
@@ -1081,7 +1081,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: knative.dev/serving
-        image: yhyddr/knative_gcr.io_knative-releases_knative.dev_serving_cmd_autoscaler:v0.11.0
+        image: yhyddr/knative_serving_cmd_autoscaler:v0.11.0
         livenessProbe:
           httpGet:
             httpHeaders:
@@ -1329,7 +1329,7 @@ data:
 
     # List of repositories for which tag to digest resolving should be skipped
     registriesSkippingTagResolving: "ko.local,dev.local"
-  queueSidecarImage: yhyddr/knative_gcr.io_knative-releases_knative.dev_serving_cmd_queue:v0.11.0
+  queueSidecarImage: yhyddr/knative_serving_cmd_queue:v0.11.0
 kind: ConfigMap
 metadata:
   labels:
@@ -1784,7 +1784,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: knative.dev/internal/serving
-        image: yhyddr/knative_gcr.io_knative-releases_knative.dev_serving_cmd_controller:v0.11.0
+        image: yhyddr/knative_serving_cmd_controller:v0.11.0
         name: controller
         ports:
         - containerPort: 9090
@@ -1862,7 +1862,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: knative.dev/serving
-        image: yhyddr/knative_gcr.io_knative-releases_knative.dev_serving_cmd_webhook:v0.11.0
+        image: yhyddr/knative_serving_cmd_webhook:v0.11.0
         name: webhook
         ports:
         - containerPort: 9090
@@ -2127,7 +2127,7 @@ spec:
           value: config-observability
         - name: METRICS_DOMAIN
           value: knative.dev/serving
-        image: yhyddr/knative_gcr.io_knative-releases_knative.dev_serving_cmd_networking_istio:v0.11.0
+        image: yhyddr/knative_serving_cmd_networking_istio:v0.11.0
         name: networking-istio
         ports:
         - containerPort: 9090

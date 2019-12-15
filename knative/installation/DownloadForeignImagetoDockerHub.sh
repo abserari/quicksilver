@@ -32,7 +32,7 @@ do
 	then
 		if [[ ${line} =~ 'gcr.io/knative-releases/knative.dev' ]]
 		then 
-			sub_line1=${line##gcr.io/knative-releases/github.com/knative/}
+			sub_line1=${line##gcr.io/knative-releases/knative.dev/}
 			sub_line2=${sub_line1%%@sha*}
 			container_name=knative_${sub_line2//\//_}
 
@@ -54,7 +54,7 @@ do
 	then
 		if [[ ${line} =~ 'gcr.io/knative-releases/knative.dev' ]]
 		then 
-			sub_line1=${line##gcr.io/knative-releases/github.com/knative/}
+			sub_line1=${line##gcr.io/knative-releases/knative.dev/}
 			sub_line2=${sub_line1%%@sha*}
 			container_name=knative_${sub_line2//\//_}
 

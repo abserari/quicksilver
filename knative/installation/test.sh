@@ -1,4 +1,4 @@
-KNATIVE_PATH='knativetest'
+KNATIVE_PATH='knative'
 KNATIVE_VER='v0.11.0'
 REGISTRY_URL='yhyddr'
 
