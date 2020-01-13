@@ -2,3 +2,5 @@
 \.vscode/
 
 \.DS_Store
+
+emitter/node_modules/
