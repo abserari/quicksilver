@@ -1,3 +1,0 @@
-[submodule "dapr/js-sdk"]
-	path = dapr/js-sdk
-	url = https://github.com/dapr/js-sdk.git
