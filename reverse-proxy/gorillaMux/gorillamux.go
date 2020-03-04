@@ -23,6 +23,27 @@ type config struct {
 	Override override
 }
 
+var configuration = []config{
+	config{
+		Path: "/api/{path:anything}",
+		Host: "httpbin.org",
+	},
+}
+
+func main() {
+	r := mux.NewRouter()
+
+	for _, conf := range configuration {
+		proxy := generateProxy(conf)
+
+		r.HandleFunc(conf.Path, func(w http.ResponseWriter, r *http.Request) {
+			proxy.ServeHTTP(w, r)
+		})
+	}
+
+	log.Fatal(http.ListenAndServe(":9001", r))
+}
+
 func generateProxy(conf config) http.Handler {
 	proxy := &httputil.ReverseProxy{Director: func(req *http.Request) {
 		originHost := conf.Host
@@ -44,34 +65,4 @@ func generateProxy(conf config) http.Handler {
 	}}
 
 	return proxy
-}
-
-func main() {
-	r := mux.NewRouter()
-
-	configuration := []config{
-		config{
-			Path: "/{path:anything/(?:foo|bar)}",
-			Host: "httpbin.org",
-		},
-		config{
-			Path: "/anything/foobar",
-			Host: "httpbin.org",
-			Override: override{
-				Header: "X-BF-Testing",
-				Match:  "integralist",
-				Path:   "/anything/newthing",
-			},
-		},
-	}
-
-	for _, conf := range configuration {
-		proxy := generateProxy(conf)
-
-		r.HandleFunc(conf.Path, func(w http.ResponseWriter, r *http.Request) {
-			proxy.ServeHTTP(w, r)
-		})
-	}
-
-	log.Fatal(http.ListenAndServe(":9001", r))
 }
