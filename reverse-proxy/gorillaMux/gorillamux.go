@@ -25,7 +25,15 @@ type config struct {
 
 var configuration = []config{
 	config{
-		Path: "/api/{path:anything}",
+		Path: "/api/room",
+		Host: "httpbin.org",
+	},
+	config{
+		Path: "/api/foo",
+		Host: "httpbin.org",
+	},
+	config{
+		Path: "/api/student",
 		Host: "httpbin.org",
 	},
 }
