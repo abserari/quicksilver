@@ -36,6 +36,15 @@ var configuration = []config{
 		Path: "/api/student",
 		Host: "httpbin.org",
 	},
+	config{
+		Path: "/anything/foobar",
+		Host: "httpbin.org",
+		Override: override{
+			Header: "X-BF-Testing",
+			Match:  "integralist",
+			Path:   "/anything/newthing",
+		},
+	},
 }
 
 func main() {
