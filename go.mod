@@ -9,5 +9,6 @@ require (
 	github.com/lib/pq v1.3.0 // indirect
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/ziutek/mymysql v1.5.4 // indirect
+	golang.org/x/net v0.0.0-20200301022130-244492dfa37a // indirect
 	gopkg.in/gorp.v1 v1.7.2
 )
