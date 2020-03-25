@@ -16,6 +16,7 @@ func init() {
 	timerMap = make(map[time.Duration]*TimingWheel)
 }
 
+// After return a channel like time.After
 func After(t time.Duration) <-chan struct{} {
 	mapLock.Lock()
 	defer mapLock.Unlock()
