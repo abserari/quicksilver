@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func BenchmarkList1(b *testing.B) {
+func BenchmarkNoTick(b *testing.B) {
 	nums := list.New()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
@@ -14,7 +14,7 @@ func BenchmarkList1(b *testing.B) {
 	}
 }
 
-func BenchmarkList2(b *testing.B) {
+func BenchmarkTickMS(b *testing.B) {
 	nums := list.New()
 	b.ResetTimer()
 	c := time.Tick(1 * time.Millisecond)
@@ -24,7 +24,7 @@ func BenchmarkList2(b *testing.B) {
 	}
 }
 
-func BenchmarkList3(b *testing.B) {
+func BenchmarkTickUS(b *testing.B) {
 	nums := list.New()
 	b.ResetTimer()
 	c := time.Tick(1 * time.Microsecond)
@@ -34,7 +34,7 @@ func BenchmarkList3(b *testing.B) {
 	}
 }
 
-func BenchmarkList4(b *testing.B) {
+func BenchmarkTickNS(b *testing.B) {
 	nums := list.New()
 	b.ResetTimer()
 	c := time.Tick(1 * time.Nanosecond)

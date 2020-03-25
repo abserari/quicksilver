@@ -10,7 +10,7 @@ import (
 func TestTimingWheel(t *testing.T) {
 	var deviation int64
 	var num int64 = 100
-	sleeptime := time.Millisecond * 20000
+	sleeptime := time.Millisecond * 500
 
 	wg := sync.WaitGroup{}
 
@@ -32,5 +32,5 @@ func TestTimingWheel(t *testing.T) {
 	}
 	wg.Wait()
 	fmt.Println(float64(deviation) / float64(num*int64(sleeptime)))
-
+	fmt.Println(time.Duration(deviation) / 100)
 }
