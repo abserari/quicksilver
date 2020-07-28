@@ -1,7 +1,7 @@
 quickstart use fileserver.go
 
 ```go
-go run fileserver.golang
+go run fileserver.go
 ```
 
 add fileserver as a http handler should be more careful about prefix.
