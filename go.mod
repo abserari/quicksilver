@@ -10,6 +10,6 @@ require (
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/nats-io/nats.go v1.9.2 // indirect
 	github.com/ziutek/mymysql v1.5.4 // indirect
-	golang.org/x/net v0.0.0-20200301022130-244492dfa37a // indirect
+	google.golang.org/api v0.30.0 // indirect
 	gopkg.in/gorp.v1 v1.7.2
 )
