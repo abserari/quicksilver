@@ -1,2 +1,2 @@
 # quicksilver
-QuicStart and archive 
+QuicStart and Packages 

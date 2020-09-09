@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/silverswords/whisper/pkg/message"
+	"github.com/silverswords/pulse/pkg/message"
 )
 
 func main() {
