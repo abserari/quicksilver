@@ -6,3 +6,7 @@
 emitter/node_modules/
 
 rust/generic/target/
+.idea/modules.xml
+.idea/quicksilver.iml
+.idea/workspace.xml
+.idea/vcs.xml

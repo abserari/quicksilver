@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	s "github.com/abserari/quicksilver/gosample/scheduler"
+	s "github.com/abserari/quicksilver/golang/scheduler"
 	"runtime"
 	"time"
 )
