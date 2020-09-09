@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/yhyddr/quicksilver/gosample/export-unexportstructure/unexport"
+	"github.com/abserari/quicksilver/gosample/export-unexportstructure/unexport"
 )
 
 func main() {

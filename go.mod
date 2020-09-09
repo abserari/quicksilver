@@ -1,4 +1,4 @@
-module github.com/yhyddr/quicksilver
+module github.com/abserari/quicksilver
 
 go 1.14
 

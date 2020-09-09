@@ -1,4 +1,4 @@
-module github.com/yhyddr/quicksilver/ipfs
+module github.com/abserari/quicksilver/ipfs
 
 go 1.13
 

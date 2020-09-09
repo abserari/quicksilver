@@ -1,4 +1,4 @@
-module github.com/yhyddr/quicksilver/s2
+module github.com/abserari/quicksilver/s2
 
 go 1.13
 
