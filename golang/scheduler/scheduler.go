@@ -25,7 +25,7 @@ import (
 	"google.golang.org/api/support/bundler"
 )
 
-// PublishScheduler is a scheduler which is designed for Pub/Sub's Publish flow.
+// PublishScheduler is a batch-scheduler which is designed for Pub/Sub's Publish flow.
 // It bundles items before handling them. All items in this PublishScheduler use
 // the same handler.
 //
@@ -76,11 +76,11 @@ type PublishScheduler struct {
 // work. A reasonably large number of workers is highly recommended. If the
 // workers arg is 0, then a healthy default of 10 workers is used.
 //
-// The scheduler does not use a parent context. If it did, canceling that
-// context would immediately stop the scheduler without waiting for
+// The batch-scheduler does not use a parent context. If it did, canceling that
+// context would immediately stop the batch-scheduler without waiting for
 // undelivered messages.
 //
-// The scheduler should be stopped only with FlushAndStop.
+// The batch-scheduler should be stopped only with FlushAndStop.
 func NewPublishScheduler(workers int, handle func(bundle interface{})) *PublishScheduler {
 	if workers == 0 {
 		workers = 10
@@ -98,9 +98,9 @@ func NewPublishScheduler(workers int, handle func(bundle interface{})) *PublishS
 	return &s
 }
 
-// Add adds an item to the scheduler at a given key.
+// Add adds an item to the batch-scheduler at a given key.
 //
-// Add never blocks. Buffering happens in the scheduler's publishers. There is
+// Add never blocks. Buffering happens in the batch-scheduler's publishers. There is
 // no flow control.
 //
 // Since ordered keys require only a single outstanding RPC at once, it is
@@ -160,7 +160,7 @@ func (s *PublishScheduler) Add(key string, item interface{}, size int) error {
 	return b.Add(item, size)
 }
 
-// FlushAndStop begins flushing items from bundlers and from the scheduler. It
+// FlushAndStop begins flushing items from bundlers and from the batch-scheduler. It
 // blocks until all items have been flushed.
 func (s *PublishScheduler) FlushAndStop() {
 	close(s.done)
@@ -211,7 +211,7 @@ func (s *PublishScheduler) Resume(orderingKey string) {
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// ReceiveScheduler is a scheduler which is designed for Pub/Sub's Receive flow.
+// ReceiveScheduler is a batch-scheduler which is designed for Pub/Sub's Receive flow.
 //
 // Each item is added with a given key. Items added to the empty string key are
 // handled in random order. Items added to any other key are handled
