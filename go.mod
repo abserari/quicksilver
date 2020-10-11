@@ -11,6 +11,7 @@ require (
 	github.com/gorilla/mux v1.7.4
 	github.com/jinzhu/configor v1.2.0 // indirect
 	github.com/jinzhu/gorm v1.9.16
+	github.com/json-iterator/go v1.1.10
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/nats-io/nats-server/v2 v2.1.8 // indirect
 	github.com/nats-io/nats.go v1.10.0
