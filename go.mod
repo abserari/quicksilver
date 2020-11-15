@@ -6,6 +6,7 @@ require (
 	github.com/GetStream/stream-go2 v3.2.1+incompatible // indirect
 	github.com/caddyserver/caddy v1.0.5
 	github.com/fsnotify/fsnotify v1.4.9
+	github.com/gin-gonic/gin v1.6.3
 	github.com/go-redis/redis/v7 v7.4.0
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gorilla/mux v1.7.4
