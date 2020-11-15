@@ -8,7 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-const webroot = "./public"
+const webroot = "./public/"
 
 func main() {
 	router := gin.Default()
