@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+<title>多多进宝计算器
+</title>
+</head>
+<body>
+
+
+  <div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="money-bag.svg" alt="" width="72" height="72">
+      <h2>多多进宝</h2>
+      <p class="lead">尚小德</p>
+    </div>
+  
+    
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-muted">你的结果</span>
+              <span class="badge badge-secondary badge-pill">尚小德</span>
+              
+            </h4>
+            <span>成本 + 运费 + 利润 ）➗ （100% - 推手佣金-平台佣金） + 优惠券价格</span>
+      
+            <form class="card p-2">
+              <div class="input-group">
+                <input type="text" class="form-control" id="sell" placeholder="多多进宝售价" >
+                <div class="input-group-append">
+                  <button type="text" class="btn btn-secondary">￥</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">填入你的数字</h4>
+        <form class="needs-validation" novalidate>
+          <div class="mb-3">
+            <b><label for="address">成本</label></b>
+            <input type="number" class="form-control" id="price" placeholder="100 元" value="100"required>
+            <div class="invalid-feedback">
+              输入你的成本价格.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <b><label for="address">运费</label></b>
+            <input type="number" class="form-control" id="postage" placeholder="10 元" value="10" required>
+            <div class="invalid-feedback">
+              输入你的运费.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <b><label for="address">利润</label></b>
+            <input type="number" class="form-control" id="profit" placeholder="20 元" value="10" required>
+            <div class="invalid-feedback">
+              输入你的利润.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <b><label for="address">推手佣金百分比</label></b>
+            <input type="number" class="form-control" id="brokerage" value="0.1" required>
+            <div class="invalid-feedback">
+              10%
+            </div>
+            <p class="help-block">推手佣金百分比需要输入小数，如 10% 则填入 0.1</p>
+          </div>
+
+          <div class="mb-3">
+              <b><label for="address">平台佣金百分比</label></b>
+              <div class="form-control-static">
+                10%
+              </div>
+              <p class="help-block">平台佣金占推手佣金的 10%</p>
+            </div>
+            
+          <div class="mb-3">
+            <b><label for="address">优惠券</label></b>
+            <input type="number" class="form-control" id="discount" placeholder="10 元" value="10" required>
+            <div class="invalid-feedback">
+              20
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg btn-block" type="button" onclick="Calculate()">计算</button>
+        </form>
+      </div>
+    </div>
+  
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2019 尚小德</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </div>
+
+  <script>
+
+  function Calculate(){
+
+
+    var price = Number(document.getElementById("price").value)
+    var postage = Number(document.getElementById("postage").value)
+    var profit = Number(document.getElementById("profit").value)
+    var brokerage = Number(document.getElementById("brokerage").value)
+    var discount = Number(document.getElementById("discount").value)
+  
+
+    document.getElementById("sell").value = 
+    (price+
+   postage+
+    profit)/(1-1.1*
+    brokerage)+
+    discount
+    console.log("sell",Number(document.getElementById("sell").value)
+    )
+  }
+  </script>
+  
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
