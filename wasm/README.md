@@ -1,1 +1,0 @@
-https://github.com/linjiajian999/blog/blob/master/web/webassembly/%E4%BD%BF%E7%94%A8go%E7%BC%96%E5%86%99webassembly.md

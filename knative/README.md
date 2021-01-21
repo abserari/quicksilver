@@ -1,1 +1,0 @@
-https://knative.dev/docs/serving/samples/hello-world/helloworld-go/index.html
