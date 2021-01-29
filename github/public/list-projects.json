@@ -1,0 +1,18 @@
+[
+  {
+    "repo": "pulse",
+    "org": "silverswords",
+    "tags": ["framework", "pub/sub"],
+    "name": "Pulse",
+    "branch": "master",
+    "topics": ["framework", "pub/sub"]
+  },
+  {
+    "repo": "abserari",
+    "org": "abserari",
+    "tags": ["profile", "github-readme"],
+    "name": "Abserari",
+    "branch": "master",
+    "topics": ["profile"]
+  }
+]

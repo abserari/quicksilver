@@ -30,10 +30,10 @@ var (
 type OriginProject struct {
 	Repo   string   `json:"repo"`
 	Org    string   `json:"org"`
-	Tags    []string `json:"tags"`
+	Tags   []string `json:"tags"`
 	Name   string   `json:"name"`
 	Branch string   `json:"branch"`
-	Topics  []string `json:"topics"`
+	Topics []string `json:"topics"`
 }
 
 // LoadFile -
@@ -45,7 +45,7 @@ func LoadFile(filename string) ([]byte, error) {
 	return data, nil
 }
 
-//  UnmarshalListProjects - 
+//  UnmarshalListProjects -
 func UnmarshalListProjects(data []byte) ([]OriginProject, error) {
 	var OriginProjects []OriginProject
 
@@ -116,13 +116,13 @@ type Project struct {
 func main() {
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: "e0b6e1cc3314887d976b5c5d9c97003f327cb76b"},
+		&oauth2.Token{AccessToken: "token"},
 	)
 	tc := oauth2.NewClient(ctx, ts)
 
 	client := github.NewClient(tc)
 
-	raw, err := LoadFile("./list-projects.json")
+	raw, err := LoadFile("./public/list-projects.json")
 	if err != nil {
 		log.Println(err)
 		return
@@ -131,7 +131,7 @@ func main() {
 	listPro, err := UnmarshalListProjects(raw)
 	if err != nil {
 		log.Println(err)
-		return 
+		return
 	}
 	log.Println(listPro)
 
@@ -139,9 +139,9 @@ func main() {
 	// date
 	jsonfile.Date = time.Now().Format(time.RFC3339)
 
-	// tags
-	var Tags2Code = make(map[string]string)
 	for _, v := range listPro {
+		// tags
+		var Tags2Code = make(map[string]string)
 		for _, t := range v.Tags {
 			if Tags2Code[t] != "" {
 				continue
@@ -149,17 +149,20 @@ func main() {
 			Tags2Code[t] = t
 			jsonfile.Tags = append(jsonfile.Tags, Tag{Name: t, Code: t})
 		}
+
+		goto Project
+	Project:
+		// get projects down
+		project, err := getProject(context.Background(), client, v.Org, v.Repo)
+		if err != nil {
+			log.Println(err, "jump this project")
+			continue
+		}
+		jsonfile.Projects = append(jsonfile.Projects, *project)
 	}
 
-	// get projects down
-	var org = "abserari"
-	var repo = "abserari"
-	project, err := getProject(context.Background(), client, org, repo)
-
-	jsonfile.Projects = append(jsonfile.Projects, *project)
-
 	data, err := json.Marshal(jsonfile)
-	fp, err := os.OpenFile("data.json", os.O_RDWR|os.O_CREATE, 0755)
+	fp, err := os.OpenFile("./public/data.json", os.O_RDWR|os.O_CREATE, 0755)
 	if err != nil {
 		log.Fatal(err)
 	}
