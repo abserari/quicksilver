@@ -11,3 +11,4 @@ rust/generic/target/
 .idea/workspace.xml
 .idea/vcs.xml
 c/a.out
+.venv
