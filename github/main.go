@@ -13,6 +13,7 @@ import (
 	"golang.org/x/oauth2"
 )
 
+const token = "88975279b913173d4c003df2c3c0e6c22bf5e2e2"
 var (
 	nowTime = time.Now()
 
@@ -116,7 +117,7 @@ type Project struct {
 func main() {
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: "token"},
+		&oauth2.Token{AccessToken: token},
 	)
 	tc := oauth2.NewClient(ctx, ts)
 
@@ -133,7 +134,6 @@ func main() {
 		log.Println(err)
 		return
 	}
-	log.Println(listPro)
 
 	var jsonfile = &JSONFile{}
 	// date
@@ -150,8 +150,6 @@ func main() {
 			jsonfile.Tags = append(jsonfile.Tags, Tag{Name: t, Code: t})
 		}
 
-		goto Project
-	Project:
 		// get projects down
 		project, err := getProject(context.Background(), client, v.Org, v.Repo)
 		if err != nil {
@@ -162,7 +160,7 @@ func main() {
 	}
 
 	data, err := json.Marshal(jsonfile)
-	fp, err := os.OpenFile("./public/data.json", os.O_RDWR|os.O_CREATE, 0755)
+	fp, err := os.OpenFile("./public/projects.json", os.O_RDWR|os.O_CREATE, 0755)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -195,13 +193,15 @@ func getProject(ctx context.Context, client *github.Client, org, repo string) (*
 	project.OwnerID = stats.GetOwner().GetID()
 	project.PushedAt = stats.GetCreatedAt().Format("2006-01-02")
 	project.CreatedAt = stats.GetCreatedAt().Format("2006-01-02")
-	project.URL = stats.GetURL()
+	project.URL = stats.GetHomepage()
 	opt := &github.ListContributorsOptions{
 		ListOptions: github.ListOptions{PerPage: 10},
 	}
 	contributors, _, err := client.Repositories.ListContributors(context.Background(), org, repo, opt)
 	project.ContributorCount = len(contributors)
 
+	strings , err := json.Marshal(stats)
+	log.Println(string(strings))
 	project.Tags = []string{"framework"}
 
 	// get all pages of results
@@ -225,10 +225,11 @@ func getStarsTrending(ctx context.Context, client *github.Client, project *Proje
 			return err
 		}
 		stars = append(stars, stargazers...)
-		if resp.NextPage == 0 {
+		if resp.NextPage == 0 || resp.NextPage > 10{
 			break
 		}
 		page = resp.NextPage
+		log.Println("next page: ", page)
 	}
 
 	for _, v := range stars {
