@@ -6,6 +6,7 @@ require (
 	github.com/GetStream/stream-go2 v3.2.1+incompatible // indirect
 	github.com/MarinX/goble v0.0.0-20170619134522-11697b9cda5d
 	github.com/MarinX/serial v0.0.0-20150614192010-79ee6244367d // indirect
+	github.com/adamzy/cedar-go v0.0.0-20170805034717-80a9c64b256d // indirect
 	github.com/caddyserver/caddy v1.0.5
 	github.com/dutchcoders/go-ouitools v0.0.0-20150909074929-ac8139d3326a
 	github.com/franela/goreq v0.0.0-20171204163338-bcd34c9993f8
@@ -15,6 +16,7 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/google/go-github/v33 v33.0.0 // indirect
 	github.com/gorilla/mux v1.7.4
+	github.com/huichen/sego v0.0.0-20180617034105-3f3c8a8cfacc // indirect
 	github.com/influxdata/influxdb-client-go/v2 v2.2.0
 	github.com/j-keck/arping v1.0.1
 	github.com/jinzhu/configor v1.2.0 // indirect
