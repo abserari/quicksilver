@@ -10,6 +10,6 @@ go run unixsocket.go
 ```
 
 ```go
-go run socketclient.go
+go run client/socketclient.go
 ```
 input something on second terminal and find the same in first terminal.
