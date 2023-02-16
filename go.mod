@@ -7,7 +7,7 @@ require (
 	github.com/adamzy/cedar-go v0.0.0-20170805034717-80a9c64b256d // indirect
 	github.com/caddyserver/caddy v1.0.5
 	github.com/container-storage-interface/spec v1.6.0
-	github.com/containerd/containerd v1.6.2 // indirect
+	github.com/containerd/containerd v1.6.18 // indirect
 	github.com/docker/distribution v2.8.1+incompatible // indirect
 	github.com/docker/docker v20.10.14+incompatible
 	github.com/fsnotify/fsnotify v1.4.9
@@ -29,7 +29,6 @@ require (
 	github.com/nats-io/nats-server/v2 v2.1.8 // indirect
 	github.com/nats-io/nats.go v1.10.0
 	github.com/nats-io/nuid v1.0.1
-	github.com/opencontainers/image-spec v1.0.2 // indirect
 	github.com/qor/admin v0.0.0-20200908023436-0c0a0b041c88 // indirect
 	github.com/qor/audited v0.0.0-20171228121055-b52c9c2f0571 // indirect
 	github.com/qor/qor v0.0.0-20200729071734-d587cffbbb93 // indirect
@@ -40,11 +39,11 @@ require (
 	go.etcd.io/bbolt v1.3.6
 	go.mongodb.org/mongo-driver v1.4.1
 	gocv.io/x/gocv v0.24.0
-	golang.org/x/net v0.0.0-20211216030914-fe4d6282115f
+	golang.org/x/net v0.0.0-20220722155237-a158d28d115b
 	golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f
 	gonum.org/v1/hdf5 v0.0.0-20210714002203-8c5d23bc6946
 	google.golang.org/api v0.43.0
-	google.golang.org/grpc v1.43.0
+	google.golang.org/grpc v1.47.0
 	gopkg.in/GetStream/stream-go2.v1 v1.14.0
 	gopkg.in/LeisureLink/httpsig.v1 v1.2.0 // indirect
 	gopkg.in/dgrijalva/jwt-go.v3 v3.2.0 // indirect
