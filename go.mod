@@ -40,7 +40,7 @@ require (
 	go.etcd.io/bbolt v1.3.6
 	go.mongodb.org/mongo-driver v1.4.1
 	gocv.io/x/gocv v0.24.0
-	golang.org/x/net v0.0.0-20211216030914-fe4d6282115f
+	golang.org/x/net v0.7.0
 	golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f
 	gonum.org/v1/hdf5 v0.0.0-20210714002203-8c5d23bc6946
 	google.golang.org/api v0.43.0
