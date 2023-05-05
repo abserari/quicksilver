@@ -11,7 +11,7 @@ require (
 	github.com/docker/distribution v2.8.1+incompatible // indirect
 	github.com/docker/docker v20.10.14+incompatible
 	github.com/fsnotify/fsnotify v1.4.9
-	github.com/gin-gonic/gin v1.6.3
+	github.com/gin-gonic/gin v1.9.0
 	github.com/go-redis/redis/v7 v7.4.0
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/google/go-github/v33 v33.0.0
@@ -36,11 +36,12 @@ require (
 	github.com/qor/transition v0.0.0-20190608002025-f17b56902e4b
 	github.com/silverswords/pulse v0.0.0-20200909082614-7291d3d44f97
 	github.com/sirupsen/logrus v1.8.1
+	github.com/ugorji/go v1.1.7 // indirect
 	github.com/ziutek/mymysql v1.5.4 // indirect
 	go.etcd.io/bbolt v1.3.6
 	go.mongodb.org/mongo-driver v1.4.1
 	gocv.io/x/gocv v0.24.0
-	golang.org/x/net v0.0.0-20211216030914-fe4d6282115f
+	golang.org/x/net v0.7.0
 	golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f
 	gonum.org/v1/hdf5 v0.0.0-20210714002203-8c5d23bc6946
 	google.golang.org/api v0.43.0
