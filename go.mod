@@ -6,7 +6,6 @@ require (
 	github.com/GetStream/stream-go2 v3.2.1+incompatible // indirect
 	github.com/adamzy/cedar-go v0.0.0-20170805034717-80a9c64b256d // indirect
 	github.com/caddyserver/caddy v1.0.5
-	github.com/container-storage-interface/spec v1.6.0
 	github.com/containerd/containerd v1.6.2 // indirect
 	github.com/docker/distribution v2.8.1+incompatible // indirect
 	github.com/docker/docker v20.10.14+incompatible
@@ -22,8 +21,6 @@ require (
 	github.com/jinzhu/configor v1.2.0 // indirect
 	github.com/jinzhu/gorm v1.9.16
 	github.com/json-iterator/go v1.1.12
-	github.com/kubernetes-csi/csi-lib-utils v0.11.0 // indirect
-	github.com/kubernetes-csi/drivers v1.0.2
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/moby/term v0.0.0-20210619224110-3f7ff695adc6 // indirect
 	github.com/nats-io/nats-server/v2 v2.1.8 // indirect
@@ -35,21 +32,18 @@ require (
 	github.com/qor/qor v0.0.0-20200729071734-d587cffbbb93 // indirect
 	github.com/qor/transition v0.0.0-20190608002025-f17b56902e4b
 	github.com/silverswords/pulse v0.0.0-20200909082614-7291d3d44f97
-	github.com/sirupsen/logrus v1.8.1
 	github.com/ziutek/mymysql v1.5.4 // indirect
 	go.etcd.io/bbolt v1.3.6
-	go.mongodb.org/mongo-driver v1.4.1
+	go.mongodb.org/mongo-driver v1.5.1
 	gocv.io/x/gocv v0.24.0
 	golang.org/x/net v0.0.0-20211216030914-fe4d6282115f
 	golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f
 	gonum.org/v1/hdf5 v0.0.0-20210714002203-8c5d23bc6946
 	google.golang.org/api v0.43.0
-	google.golang.org/grpc v1.43.0
 	gopkg.in/GetStream/stream-go2.v1 v1.14.0
 	gopkg.in/LeisureLink/httpsig.v1 v1.2.0 // indirect
 	gopkg.in/dgrijalva/jwt-go.v3 v3.2.0 // indirect
 	gopkg.in/gorp.v1 v1.7.2
 	gopkg.in/transloadit/go-sdk.v1 v1.1.1
 	gotest.tools/v3 v3.1.0 // indirect
-	k8s.io/client-go v0.22.5
 )
